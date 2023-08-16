@@ -10,6 +10,4 @@ export class AppComponent {
   title = 'ETicaretClient';
 }
 
-$(document).ready(()=>{
-  alert("bok")
-})
+
