@@ -11,12 +11,11 @@ declare var $: any
 
 export class AppComponent {
   title = 'ETicaretClient';
-  constructor(private toastrService: CustomToastrService){
-    toastrService.message("Selam", "Özgün", {messageType: ToastrMessageType.Info, positon: ToastrPosition.TopCenter});
-    toastrService.message("Merhaba", "Özgün", {messageType: ToastrMessageType.Error, positon: ToastrPosition.TopLeft});
-    toastrService.message("Selam", "göt", {messageType: ToastrMessageType.Success, positon: ToastrPosition.TopRight});
-    toastrService.message("Merhaba", "göt", {messageType: ToastrMessageType.Warning, positon: ToastrPosition.BottomFullWidth});
+  constructor(){
+
   }
 }
 
-
+$.get("https://localhost:7198/api/products", data=>{
+  console.log(data)
+})
