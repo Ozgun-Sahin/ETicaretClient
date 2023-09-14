@@ -11,6 +11,6 @@
     "\\src\\app\\services\\common",
     "\\src\\app\\services\\common\\models"
   ],
-  "SelectedNode": "\\src\\app\\admin\\components\\products\\create\\create.component.ts",
+  "SelectedNode": "\\src\\app\\admin\\components\\products\\list\\list.component.ts",
   "PreviewInSolutionExplorer": false
 }
