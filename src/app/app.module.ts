@@ -11,11 +11,13 @@ import { BaseComponent } from './base/base.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDirective } from './directives/admin/delete.directive';
 import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
+import { FileUploadComponent } from './services/common/file-upload/file-upload.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
+import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.com
     AdminModule, UiModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxFileDropModule
   ],
   providers: [
     {provide:"baseUrl", useValue:"https://localhost:7198/api",multi:true}
