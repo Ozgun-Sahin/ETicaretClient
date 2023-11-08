@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.angular",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\admin",
     "\\src\\app\\dialogs",
-    "\\src\\app\\dialogs\\delete-dialog",
-    "\\src\\app\\directives",
-    "\\src\\app\\directives\\admin",
+    "\\src\\app\\dialogs\\file-upload-dialog",
     "\\src\\app\\services",
     "\\src\\app\\services\\common",
     "\\src\\app\\services\\common\\file-upload"
   ],
-  "SelectedNode": "\\src\\app\\dialogs\\dialog.module.ts",
   "PreviewInSolutionExplorer": false
 }
