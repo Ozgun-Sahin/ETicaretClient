@@ -3,13 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\contracts",
-    "\\src\\app\\dialogs",
-    "\\src\\app\\dialogs\\select-product-image-dialog",
-    "\\src\\app\\services",
-    "\\src\\app\\services\\common",
-    "\\src\\app\\services\\common\\models"
+    "\\src\\app\\ui",
+    "\\src\\app\\ui\\components",
+    "\\src\\app\\ui\\components\\register"
   ],
-  "SelectedNode": "\\src\\app\\dialogs\\select-product-image-dialog\\select-product-image-dialog.component.ts",
+  "SelectedNode": "\\src\\app\\ui\\components\\register\\register.component.ts",
   "PreviewInSolutionExplorer": false
 }
