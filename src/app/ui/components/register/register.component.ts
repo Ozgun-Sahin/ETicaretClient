@@ -1,28 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { User } from '../../../entities/user';
+import { UserService } from '../../../services/common/models/user.service';
+import { Create_User } from '../../../contracts/users/create_user';
+import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../services/ui/custom-toastr.service';
+import { BaseComponent } from '../../../base/base.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) { }
+export class RegisterComponent extends BaseComponent implements OnInit {
+  constructor(
+    private formBuilder: FormBuilder,
+    private userServices: UserService,
+    private toastrService: CustomToastrService,
+    spinner: NgxSpinnerService) {
+    super(spinner)
+  }
 
   frm: FormGroup;
   ngOnInit(): void {
     this.frm = this.formBuilder.group({
-      adSoyad: ["",[Validators.required, Validators.maxLength(50), Validators.minLength(3)]],
-      kullaniciAdi: ["", [Validators.required, Validators.maxLength(50), Validators.minLength(3)]],
+      nameSurname: ["", [Validators.required, Validators.maxLength(50), Validators.minLength(3)]],
+      username: ["", [Validators.required, Validators.maxLength(50), Validators.minLength(3)]],
       email: ["", [Validators.required, Validators.email]],
-      sifre: ["",[Validators.required,]],
-      sifreTekrar: ["",[Validators.required,]]
+      password: ["", [Validators.required,]],
+      passwordConfirm: ["", [Validators.required,]]
     }, {
       validators: (group: AbstractControl): ValidationErrors | null => {
 
-        let sifre = group.get("sifre").value;
-        let sifreTekrar = group.get("sifreTekrar").value;
+        let sifre = group.get("password").value;
+        let sifreTekrar = group.get("passwordConfirm").value;
 
         return sifre === sifreTekrar ? null : { notSame: true };
 
@@ -35,11 +46,23 @@ export class RegisterComponent implements OnInit {
   }
 
   submitted: boolean = false;
-  onSubmit(data: User) {
+  async onSubmit(user: User) {
     this.submitted = true;
 
     if (this.frm.invalid)
       return;
-  }
 
+    const result: Create_User = await this.userServices.create(user);
+
+    if (result.succeeded)
+      this.toastrService.message(result.message, "Kullanıcı Kaydı Başarılı", {
+        messageType: ToastrMessageType.Success,
+        positon: ToastrPosition.TopRight
+      })
+    else
+      this.toastrService.message(result.message, "Kullanıcı Kaydı Hatası", {
+        messageType: ToastrMessageType.Error,
+        positon: ToastrPosition.TopRight
+      })
+  }
 }
