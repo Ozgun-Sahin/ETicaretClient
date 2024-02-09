@@ -4,12 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\admin",
-    "\\src\\app\\services",
-    "\\src\\app\\services\\common",
-    "\\src\\app\\services\\common\\models",
-    "\\src\\app\\ui",
-    "\\src\\app\\ui\\components",
-    "\\src\\app\\ui\\components\\login"
+    "\\src\\app\\admin\\components",
+    "\\src\\app\\admin\\components\\products",
+    "\\src\\app\\admin\\components\\products\\create",
+    "\\src\\app\\admin\\components\\products\\list",
+    "\\src\\assets"
   ],
   "PreviewInSolutionExplorer": false
 }

@@ -16,7 +16,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './ui/components/login/login.component';
-import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -52,6 +52,10 @@ import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig,
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider("1075721112211-8tkkld4ls9llrvlkj58059l98mi7sjj3.apps.googleusercontent.com")
           },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider("734570465069207")
+          }
         ],
         onError: err => console.error(err)
       } as SocialAuthServiceConfig,
