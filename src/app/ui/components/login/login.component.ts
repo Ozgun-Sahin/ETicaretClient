@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FacebookLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { HttpClientService } from '../../../services/common/http-client.service';
 import { TokenResponse } from '../../../contracts/token/tokenResponse';
+import { UserAuthService } from '../../../services/common/models/user-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ import { TokenResponse } from '../../../contracts/token/tokenResponse';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
-  constructor(private userService: UserService,
+  constructor(private userAuthService: UserAuthService,
     spinner: NgxSpinnerService,
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
@@ -28,13 +29,13 @@ export class LoginComponent extends BaseComponent implements OnInit {
       this.showSpinner(SpinnerType.BallAtom);
       switch (user.provider) {
         case "GOOGLE":
-          await userService.gooleLogin(user, () => {
+          await userAuthService.gooleLogin(user, () => {
             this.authService.identityCheck();
             this.hideSpinner(SpinnerType.BallAtom);
           })
           break;
         case "FACEBOOK":
-          await userService.facebookLogin(user, () => {
+          await userAuthService.facebookLogin(user, () => {
             this.authService.identityCheck();
             this.hideSpinner(SpinnerType.BallAtom);
           })
@@ -49,7 +50,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   async login(UsernameOrEmail: string, Password: string) {
     this.showSpinner(SpinnerType.BallAtom);
-    await this.userService.login(UsernameOrEmail, Password, () => {
+    await this.userAuthService.login(UsernameOrEmail, Password, () => {
       this.authService.identityCheck();
 
       this.activatedRoute.queryParams.subscribe(params => {
