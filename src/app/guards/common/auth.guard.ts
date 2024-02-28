@@ -43,7 +43,7 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   spinner.hide(SpinnerType.BallAtom);
 
-  debugger;
+  //debugger;
 
   return true;
 };
