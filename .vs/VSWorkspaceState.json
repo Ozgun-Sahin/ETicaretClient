@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\admin\\components",
+    "\\src\\app\\admin\\components\\dashboard",
+    "\\src\\app\\constants",
+    "\\src\\app\\services",
+    "\\src\\app\\services\\common"
   ],
+  "SelectedNode": "\\src\\app\\constants\\hub-urls.ts",
   "PreviewInSolutionExplorer": false
 }
