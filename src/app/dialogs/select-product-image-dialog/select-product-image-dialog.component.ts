@@ -9,6 +9,7 @@ import { SpinnerType } from '../../base/base.component';
 import { DialogService } from '../../services/common/dialog.service';
 import { DeleteDialogComponent, DeleteState } from '../delete-dialog/delete-dialog.component';
 import { async } from 'rxjs';
+import { StickyDirection } from '@angular/cdk/table';
 
 declare var $: any
 
@@ -52,11 +53,19 @@ export class SelectProductImageDialogComponent extends BaseDialog<SelectProductI
       data: DeleteState.Yes,
       afterClosed: async () => {
         this.spinner.show(SpinnerType.BallAtom)
-        await this.productService.deleteImage(this.data as string, imageId, () => this.spinner.hide(SpinnerType.BallAtom));
-        var card = $(event.srcElement).parent().parent().parent();
-        card.fadeOut(500);
+        await this.productService.deleteImage(this.data as string, imageId, () => {
+          this.spinner.hide(SpinnerType.BallAtom);
+          var card = $(event.srcElement).parent().parent().parent();
+          card.fadeOut(500);
+        });
       }
     })
+  }
+  showCase(imageId: string) {
+    this.spinner.show(SpinnerType.BallAtom);
+    this.productService.changeShowcaseImage(imageId, this.data as string, () => {
+      this.spinner.hide(SpinnerType.BallAtom);
+    });
   }
 }
 
