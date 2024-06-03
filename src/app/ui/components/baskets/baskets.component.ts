@@ -43,7 +43,5 @@ export class BasketsComponent extends BaseComponent implements OnInit{
     
     await this.basketService.remove(basketItemId)
     $("." + basketItemId).fadeOut(2000, () => this.hideSpinner(SpinnerType.BallAtom))
-
-    
   }
 }
