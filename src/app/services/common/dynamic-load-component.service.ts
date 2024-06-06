@@ -6,7 +6,7 @@ import { BaseComponent } from '../../base/base.component';
 })
 export class DynamicLoadComponentService {
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor() { }
 
   async loadComponent(component: ComponentType, viewContainerRef: ViewContainerRef) {
 
@@ -15,10 +15,11 @@ export class DynamicLoadComponentService {
     switch (component) {
       case ComponentType.BasketsComponent:
         _component = (await import("../../ui/components/baskets/baskets.component")).BasketsComponent;
+        break;
     }
 
     viewContainerRef.clear();
-    return viewContainerRef.createComponent(this.componentFactoryResolver.resolveComponentFactory(_component))
+    return viewContainerRef.createComponent(_component)
 
   }
 }
