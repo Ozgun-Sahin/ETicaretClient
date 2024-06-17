@@ -5,13 +5,11 @@
     "\\src\\app",
     "\\src\\app\\admin",
     "\\src\\app\\admin\\components",
-    "\\src\\app\\admin\\components\\dashboard",
-    "\\src\\app\\dialogs",
-    "\\src\\app\\dialogs\\shopping-complete-dialog",
-    "\\src\\app\\ui",
-    "\\src\\app\\ui\\components",
-    "\\src\\app\\ui\\components\\baskets"
+    "\\src\\app\\admin\\components\\order",
+    "\\src\\app\\admin\\components\\order\\list",
+    "\\src\\app\\services",
+    "\\src\\app\\services\\common",
+    "\\src\\app\\services\\common\\models"
   ],
-  "SelectedNode": "\\src\\app\\admin\\components\\dashboard\\dashboard.component.ts",
   "PreviewInSolutionExplorer": false
 }
