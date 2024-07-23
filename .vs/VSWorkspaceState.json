@@ -1,6 +1,17 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\admin\\components",
+    "\\src\\app\\admin\\components\\order",
+    "\\src\\app\\admin\\components\\order\\list",
+    "\\src\\app\\contracts",
+    "\\src\\app\\contracts\\order",
+    "\\src\\app\\dialogs",
+    "\\src\\app\\dialogs\\order-detail-dialog"
   ],
+  "SelectedNode": "\\src\\app\\contracts\\order\\single_order.ts",
   "PreviewInSolutionExplorer": false
 }
