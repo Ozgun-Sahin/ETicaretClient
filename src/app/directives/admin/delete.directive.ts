@@ -56,7 +56,7 @@ export class DeleteDirective {
             height: "toogle"
           }, 700, () => {
             this.callback.emit();
-            this.alertifyService.message("Ürün Silinmiştir !", {
+            this.alertifyService.message(`${this.controller == 'roles' ? 'Rol' : 'Ürün'} Silinmiştir !`, {
               dismissOthers: true,
               messageType: MessageType.Warning,
               position: Position.TopRight

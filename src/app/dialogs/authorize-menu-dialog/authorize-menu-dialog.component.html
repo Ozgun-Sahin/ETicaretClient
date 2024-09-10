@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{data.name}} End Point'ine Rol Atama</h1>
+<div mat-dialog-content>
+  <p>Rol Seçiniz</p>
+</div>
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let shoe of typesOfShoes">
+    {{shoe}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Options selected: {{shoes.selectedOptions.selected.length}}
+</p>
+<div matBadge="4" matBadgeOverlap="false"></div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">İptal</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial> Evet </button>
+</div>

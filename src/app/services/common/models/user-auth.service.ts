@@ -29,7 +29,7 @@ export class UserAuthService {
         positon: ToastrPosition.TopRight
       })
     }
-
+    
     callBackFunction();
   }
 
