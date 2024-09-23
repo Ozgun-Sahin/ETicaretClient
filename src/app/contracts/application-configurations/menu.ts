@@ -6,6 +6,6 @@ export class Menu {
 export class Action {
   actionType: string;
   httpType: string;
-  definiton: string;
+  definition: string;
   code: string;
 }
